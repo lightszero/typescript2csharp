@@ -181,7 +181,7 @@ namespace tscsharp
         }
     }
 
-    static class ScannerTool
+    public static class ScannerTool
     {
         static Dictionary<string, SyntaxKind> __textToToken;
         public static Dictionary<string, SyntaxKind> textToToken
@@ -365,7 +365,7 @@ namespace tscsharp
 
         public static string Substring(string text, int start, int end)
         {
-            return text.Substring(start, end - start + 1);
+            return text.Substring(start, end - start);
         }
         public static string Substr(string text, int start, int length)
         {
