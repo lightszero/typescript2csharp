@@ -40,7 +40,7 @@
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(318, 471);
             this.richTextBox1.TabIndex = 0;
-            this.richTextBox1.Text = "window.onload = () => {\n    console.log(\"hello world.\");\n    //com\n\n};";
+            this.richTextBox1.Text = "var i: number = 0;\nvar b: string = \"hello\";\nconsole.log(b + i);";
             // 
             // button1
             // 
@@ -75,7 +75,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(897, 515);
+            this.ClientSize = new System.Drawing.Size(1122, 569);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.button1);
