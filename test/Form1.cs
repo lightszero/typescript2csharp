@@ -57,5 +57,28 @@ namespace test
             }
             while (kind != tscsharp.SyntaxKind.EndOfFileToken);
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            var node = tscsharp.AstTool.ParseFile(this.richTextBox1.Text);
+
+            this.treeView1.Nodes.Clear();
+            TreeNode tn = new TreeNode();
+            FillTree(node, tn);
+            this.treeView1.Nodes.Add(tn);
+            this.treeView1.ExpandAll();
+
+        }
+        void FillTree(tscsharp.IAstNode node, TreeNode uinode)
+        {
+            uinode.Text = "(" + node.use + "=" + node.value + ")" + node.GetType().Name;
+            if (node.subnodes != null)
+                foreach (var s in node.subnodes)
+                {
+                    TreeNode subui = new TreeNode();
+                    uinode.Nodes.Add(subui);
+                    FillTree(s, subui);
+                }
+        }
     }
 }

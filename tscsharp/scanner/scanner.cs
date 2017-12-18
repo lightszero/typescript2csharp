@@ -1677,14 +1677,14 @@ namespace tscsharp
             string scanNumber()
             {
                 var start = pos;
-                while (isDigit(text[pos])) pos++;
-                if (text[pos] == (char)CharacterCodes.dot)
+                while (pos < text.Length && isDigit(text[pos])) pos++;
+                if (pos < text.Length && text[pos] == (char)CharacterCodes.dot)
                 {
                     pos++;
                     while (isDigit(text[pos])) pos++;
                 }
                 var end = pos;
-                if (text[pos] == (char)CharacterCodes.E || text[pos] == (char)CharacterCodes.e)
+                if (pos < text.Length && (text[pos] == (char)CharacterCodes.E || text[pos] == (char)CharacterCodes.e))
                 {
                     pos++;
                     numericLiteralFlags = NumericLiteralFlags.Scientific;
